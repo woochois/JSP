@@ -49,8 +49,7 @@ public class E015Sum {
 		 int[] a = new int[10];
 		 for(int i = 1; i < a.length; i++) {
 			 System.out.print("정수를 입력하시오 : ");
-			 n = stdIn.nextInt();
-			 a[i] = n;
+			 a[i] =stdIn.nextInt();
 		 }
 		 
 		 for(int i = 1; i < a.length; i++) {
