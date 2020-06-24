@@ -1,4 +1,4 @@
-package com.hk.web;
+package com.hk.algorithm;
 
 import java.util.Scanner;
 
