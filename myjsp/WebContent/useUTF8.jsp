@@ -7,13 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%
-	for(int i=0; i<5; i++) {
-		
-%>
-<h1>Hello</h1>
-<%
-}
-%>
+
 </body>
 </html>

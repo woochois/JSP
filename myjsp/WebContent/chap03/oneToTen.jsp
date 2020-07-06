@@ -4,16 +4,13 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>1 - 10 까지의 합</title>
 </head>
 <body>
-<%
-	for(int i=0; i<5; i++) {
-		
-%>
-<h1>Hello</h1>
-<%
-}
-%>
+	<%
+		int sum = 0;
+		for(int i=1; i<=10; i++) sum += i;
+	%>
+	1 부터 10 까지의 합은 <%=sum %>입니다.
 </body>
 </html>
