@@ -19,4 +19,8 @@
 		<param-name>debugLevel</param-name>
 		<param-value>5</param-value>
 	</context-param>
+	
+	<session-config>
+		<session-timeout>60</session-timeout>
+	</session-config>
 </web-app>
