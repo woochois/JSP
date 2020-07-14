@@ -17,5 +17,5 @@ public class MyBean {
 		public void setId(int id) {
 			this.id = id;
 		}
-	
+	 
 }

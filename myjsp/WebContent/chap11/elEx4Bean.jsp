@@ -25,6 +25,6 @@
 	<hr />
 	<jsp:include page="elEx4Sub.jsp" />
 	<hr />
-	${pageContext.request.localName }
+	${pageContext.request.localName } 
 </body>
 </html>

@@ -26,4 +26,4 @@
 	<hr />
 	<h1><%=((List<String>)request.getAttribute("mylist")).get(3) %></h1>
 </body>
-</html>
+</html> 

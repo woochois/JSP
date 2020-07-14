@@ -37,7 +37,7 @@
 				<li>${list[i].id}, ${list[i].name}</li>
 		<%				
 			}
-		%>
+		%> 
 	</ul>
 </body>
 </html>

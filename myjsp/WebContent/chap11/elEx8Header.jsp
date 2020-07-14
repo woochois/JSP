@@ -12,4 +12,4 @@
 	<h1>${cookie["JSESSIONID"].name}, ${cookie["JSESSIONID"].value}</h1>
 	<h1>${initParam.logEnabled }</h1>
 </body>
-</html>
+</html> 

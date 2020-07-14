@@ -37,7 +37,7 @@ ${myMap.key2 },
 ${requestScope.myMap.key2 },
 ${requestScope["myMap"].key2 },
 ${requestScope["myMap"]["key2"] }
-
+ 
 <h1>pageScope</h1>
 ${pageScope.page1 }, ${page1 }
 

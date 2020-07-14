@@ -42,6 +42,6 @@
  <li>headerValues : ${headerValues }</li>
  <li>cookie : ${cookie }</li>
  <li>initParam : ${initParam }</li>
- </ul>
+ </ul> 
 </body>
 </html>
