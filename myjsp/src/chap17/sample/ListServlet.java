@@ -67,5 +67,4 @@ public class ListServlet extends HttpServlet {
 		view.forward(request, response);
 		
 	}
-
 }
