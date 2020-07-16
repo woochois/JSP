@@ -12,8 +12,13 @@ import javax.servlet.http.HttpServletResponse;
 public class InitMethodEx1 extends HttpServlet {
 
     public InitMethodEx1() throws ServletException {
-        super.init();
-        System.out.println("init 메소드 최초 실행");
+        super();
+    }
+    
+    @Override
+    public void init() throws ServletException {
+    	super.init();
+    	System.out.println("InitMethodEx1 init 메소드 최초 실행 ");
     }
 
 	@Override
