@@ -1,6 +1,7 @@
 package chap19;
 
 import java.io.IOException;
+import java.util.StringTokenizer;
 
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
@@ -8,51 +9,50 @@ import javax.servlet.FilterConfig;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
+import javax.servlet.http.HttpServletRequest;
 
 /**
- * Servlet Filter implementation class FilterEx2
+ * Servlet Filter implementation class NullParameterFilter
  */
-//@WebFilter("/FilterEx2")
-public class FilterEx2 implements Filter {
+//@WebFilter("/NullParameterFilter")
+public class NullParameterFilter implements Filter {
+	private String[] parameterNames = null;
 
     /**
      * Default constructor. 
      */
-    public FilterEx2() {
+    public NullParameterFilter() {
         // TODO Auto-generated constructor stub
     }
 
 	/**
 	 * @see Filter#destroy()
 	 */
-	@Override
 	public void destroy() {
 		// TODO Auto-generated method stub
 	}
 
 	/**
 	 * @see Filter#doFilter(ServletRequest, ServletResponse, FilterChain)
-	 */
-	@Override
+	 */ 
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
-		// TODO Auto-generated method stub
-		// place your code here
-		
-		System.out.println("필터2 통과");
-		
-		// pass the request along the filter chain
-		// 필터의 일처리 = 서블릿으로 넘겨주는 코드 (주석처리하면 필터는 통과하는데 서블릿은 실행이 안된다.)
-		chain.doFilter(request, response); 
-		
-		System.out.println("다시 필터 2 통과");
+		NullParameterRequestWrapper requestWrapper = 
+				new NullParameterRequestWrapper((HttpServletRequest) request);
+		requestWrapper.checkNull(parameterNames);
+		chain.doFilter(requestWrapper, response);
 	}
 
 	/**
 	 * @see Filter#init(FilterConfig)
 	 */
-	@Override
 	public void init(FilterConfig fConfig) throws ServletException {
-		// TODO Auto-generated method stub
+		String names = fConfig.getInitParameter("parameterNames");
+		StringTokenizer st = new StringTokenizer(names, ",");
+		parameterNames = new String[st.countTokens()];
+		for (int i = 0; st.hasMoreTokens(); i++) {
+			parameterNames[i] = st.nextToken();
+		}
+		
 	}
 
 }

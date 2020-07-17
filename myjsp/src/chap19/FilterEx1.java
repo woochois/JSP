@@ -41,6 +41,8 @@ public class FilterEx1 implements javax.servlet.Filter {
 		
 		// pass the request along the filter chain
 		chain.doFilter(request, response);
+		
+		System.out.println("다시 필터 1 통과");
 	}
 
 	/**
