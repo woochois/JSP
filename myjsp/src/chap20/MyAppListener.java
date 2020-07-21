@@ -56,6 +56,7 @@ public class MyAppListener implements ServletContextListener {
 	private void initConnectionPool() {
 		// TODO Auto-generated method stub
 		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
 			String jdbcUrl = "jdbc:mysql://localhost/test1" + "?serverTimezone=Asia/Seoul";
 			String username = "root";
 			String pw = "rootpw";
