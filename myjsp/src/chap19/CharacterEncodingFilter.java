@@ -9,19 +9,16 @@ import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 
-/**
- * Servlet Filter implementation class CharacterEncodingFilter
- */
-//@WebFilter("/CharacterEncodingFilter")
 public class CharacterEncodingFilter implements Filter {
 
 	private String encoding;
 
 	@Override
-	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
+	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
+			throws IOException, ServletException {
 
 		request.setCharacterEncoding(encoding);
-		
+
 		chain.doFilter(request, response);
 	}
 
@@ -29,14 +26,14 @@ public class CharacterEncodingFilter implements Filter {
 	public void init(FilterConfig fConfig) throws ServletException {
 
 		encoding = fConfig.getInitParameter("encoding");
-		if(encoding==null) {
+		if (encoding == null) {
 			encoding = "UTF-8";
 		}
 	}
-	
+
 	@Override
 	public void destroy() {
-		
+
 	}
 
 }
